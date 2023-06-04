@@ -1,0 +1,67 @@
+# Write your query or mutation here
+query GetAllBlogs(
+  $pagina: Int
+  $numeroPagina: Int
+  $estado: String
+  $destacado: String
+) {
+  GetAllBlogs(
+    pagina: $pagina
+    numeroPagina: $numeroPagina
+    estado: $estado
+    destacado: $destacado
+  ) {
+    data {
+      destacado
+      CategoriaBlog {
+        created_at
+        categoriaBlogId
+        descripcion
+        destacado
+        imagenPrincipal {
+          estado
+          id
+          titulo
+          url
+        }
+        estado
+        keywords
+        imagenSecundaria {
+          estado
+          id
+          titulo
+          url
+        }
+        numeroBlogs
+        slug
+        titulo
+        updated_at
+      }
+
+      blogId
+      categoriaBlogId
+      descripcionCorta
+      created_at
+
+      estado
+      imagenPrincipal {
+        estado
+        id
+        titulo
+        url
+      }
+      imagenSecundaria {
+        estado
+        id
+        titulo
+        url
+      }
+      keywords
+      slug
+      titulo
+      updated_at
+      usuarioId
+    }
+    numeroTotal
+  }
+}

@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Roboto', Helvetica, Arial, sans-serif;
+}
+
+body.dark {
+  @apply bg-slate-800;
+}
+
+@layer components {
+  .container {
+    @apply w-full px-8 mx-auto max-w-7xl;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+.imgBannerNabar {
+  background-image: url('/images/bgbanner.webp');
+  background-position: center;
+  /* aspect-ratio: 1/1; */
+  /* background-repeat: repeat; */
+  background-size: cover;
+}
+body::-webkit-scrollbar {
+  width: 5.8px;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ad8e6d;
+  outline: 1px solid slategrey;
+}
+
+.scroll-link {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.mouse {
+  max-width: 2.5rem;
+  width: 100%;
+  height: auto;
+}
+.scroll {
+  animation-name: scroll;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.65, -0.55, 0.25, 1.5);
+  animation-iteration-count: infinite;
+  transform-origin: 50% 20.5px;
+  will-change: transform;
+}
+@keyframes scroll {
+  0%,
+  20% {
+    transform: translateY(0) scaleY(1);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(36px) scaleY(2);
+    opacity: 0.01;
+  }
+}
+
+.hrefEnlace {
+  @apply duration-300 transition-all ease-in-out rounded-full border p-1;
+}
+
+.hrefIcon {
+  @apply w-6 h-6 text-custon4 duration-300 transition-all ease-in-out;
+}
+.hrefEnlace:hover > svg {
+  @apply text-white;
+}
+
+.selectionItemNavbar {
+  @apply text-custom1;
+}
+
+.selectionItemNavbar::after {
+  bottom: 0 !important;
+  background-color: #ad8e6d !important;
+}
